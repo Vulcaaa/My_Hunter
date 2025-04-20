@@ -10,7 +10,7 @@
 void init_m1_bis(main_t *e)
 {
     e->m = malloc(sizeof(m_t));
-    e->m->texture = sfTexture_createFromFile("./image/mete.png", NULL);
+    e->m->texture = sfTexture_createFromFile("./ressources/mete.png", NULL);
     e->m->sprite = sfSprite_create();
     sfSprite_setTexture(e->m->sprite, e->m->texture, sfFalse);
 }
@@ -30,7 +30,7 @@ void init_m1(main_t *e)
     e->m->orientation = 190.0;
     e->m->is_dead = false;
     e->m->sprite_m = sfSprite_create();
-    e->event->texture = sfTexture_createFromFile("image/explosion.png", NULL);
+    e->event->texture = sfTexture_createFromFile("ressources/explosion.png", NULL);
     sfSprite_setTexture(e->m->sprite_m, e->event->texture, sfFalse);
     e->m->rect_mete = (sfIntRect) {0, 0, 102, 102};
     e->m->scale_expl = (sfVector2f) {2, 2};
@@ -53,7 +53,7 @@ void init_m2_bis(main_t *e)
 void init_m2(main_t *e)
 {
     e->m2 = malloc(sizeof(m2_t));
-    e->m2->texture = sfTexture_createFromFile("./image/mete.png", NULL);
+    e->m2->texture = sfTexture_createFromFile("./ressources/mete.png", NULL);
     e->m2->sprit = sfSprite_create();
     sfSprite_setTexture(e->m2->sprit, e->m2->texture, sfFalse);
     e->m2->vec = (sfVector2f){-100, 190};
@@ -73,7 +73,7 @@ void init_m2(main_t *e)
 void init_m3(main_t *e)
 {
     e->m3 = malloc(sizeof(m3_t));
-    e->m3->texture = sfTexture_createFromFile("./image/mete.png", NULL);
+    e->m3->texture = sfTexture_createFromFile("./ressources/mete.png", NULL);
     e->m3->spri = sfSprite_create();
     sfSprite_setTexture(e->m3->spri, e->m3->texture, sfFalse);
     e->m3->vec = (sfVector2f){-250, 80};

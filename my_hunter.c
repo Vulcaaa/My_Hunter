@@ -10,14 +10,14 @@
 void init_struct_bis(main_t *e)
 {
     e->event->sound = sfSound_create();
-    e->event->sound_buf = sfSoundBuffer_createFromFile("./image/laser.mp3");
+    e->event->sound_buf = sfSoundBuffer_createFromFile("ressources/laser.mp3");
     sfSound_setBuffer(e->event->sound, e->event->sound_buf);
     sfSound_setVolume(e->event->sound, e->event->volume);
     e->event->sound_ex = sfSound_create();
-    e->event->sound_ex_buf = sfSoundBuffer_createFromFile("./image/exp.mp3");
+    e->event->sound_ex_buf = sfSoundBuffer_createFromFile("ressources/exp.mp3");
     sfSound_setBuffer(e->event->sound_ex, e->event->sound_ex_buf);
     sfSound_setVolume(e->event->sound_ex, e->event->volume_ex);
-    e->cursor->texture = sfTexture_createFromFile("./image/cross.png", NULL);
+    e->cursor->texture = sfTexture_createFromFile("ressources/cross.png", NULL);
     e->cursor->sprite = sfSprite_create();
     sfSprite_setTexture(e->cursor->sprite, e->cursor->texture, sfFalse);
     e->run_game = true;
@@ -33,7 +33,7 @@ void init_struct(main_t *e, int argc, char **argv)
     e->event->volume = 20.0;
     e->event->volume_ex = 20.0;
     e->cursor = malloc(sizeof(cursor_t));
-    e->bg->texture = sfTexture_createFromFile("./image/bg.jpg", NULL);
+    e->bg->texture = sfTexture_createFromFile("ressources/bg.jpg", NULL);
     e->bg->sprite = sfSprite_create();
     e->bg->scale = (sfVector2f) {0.99, 0.99};
     sfSprite_setScale(e->bg->sprite, e->bg->scale);
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     main_t *e = malloc(sizeof(main_t));
 
     init_struct(e, argc, argv);
-    e->window = sfRenderWindow_create(e->mode, e->n, sfResize | sfClose, NULL);
+    e->window = sfRenderWindow_create(e->mode, e->n, sfFullscreen | sfClose, NULL);
     while (sfRenderWindow_isOpen(e->window)) {
         if (!e->run_game) {
             destroy_all(e);

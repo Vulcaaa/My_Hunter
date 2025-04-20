@@ -34,7 +34,7 @@ void init_highest_score(main_t *e)
     e->score_max = malloc(sizeof(score_max_t));
     e->score_max->text = sfText_create();
     sfText_setFont(e->score_max->text, e->score->font);
-    e->score_max->pos = (sfVector2f) {40, 880};
+    e->score_max->pos = (sfVector2f) {40, 995};
     sfText_setPosition(e->score_max->text, e->score_max->pos);
     sfText_setCharacterSize(e->score_max->text, e->score->size);
     sfText_setScale(e->score_max->text, e->score->scale);
@@ -56,7 +56,7 @@ void init_score_bis(main_t *e)
     e->score->e_life = 0;
     my_strcat_int(e->score->str, e->score->score_nbr);
     sfText_setString(e->score->text, e->score->str);
-    e->score->texture = sfTexture_createFromFile("image/Heart.png", NULL);
+    e->score->texture = sfTexture_createFromFile("ressources/Heart.png", NULL);
     e->score->sprite = sfSprite_create();
     sfSprite_setTexture(e->score->sprite, e->score->texture, sfFalse);
     e->score->pos_life = (sfVector2f) {1630, -40};
@@ -72,9 +72,9 @@ void init_score(main_t *e)
     e->score = malloc(sizeof(score_t));
     e->diffi = malloc(sizeof(diffi_t));
     e->score->text = sfText_create();
-    e->score->font = sfFont_createFromFile("image/Storan.otf");
+    e->score->font = sfFont_createFromFile("ressources/Storan.otf");
     sfText_setFont(e->score->text, e->score->font);
-    e->score->pos = (sfVector2f) {40, 830};
+    e->score->pos = (sfVector2f) {40, 930};
     sfText_setPosition(e->score->text, e->score->pos);
     e->score->size = 40;
     sfText_setCharacterSize(e->score->text, e->score->size);

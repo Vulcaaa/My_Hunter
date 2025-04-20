@@ -25,7 +25,7 @@ void event_function(main_t *e)
             e->cursor->vec.y = e->event->event.mouseMove.y - 128;
             sfSprite_setPosition(e->cursor->sprite, e->cursor->vec);
         }
-        if (e->event->event.type == sfEvtClosed)
+        if (e->event->event.type == sfEvtClosed || (e->event->event.type == sfEvtKeyPressed && e->event->event.key.code == sfKeyEscape))
             sfRenderWindow_close(e->window);
         if (e->event->event.type == sfEvtMouseButtonPressed) {
             e->event->x = e->event->event.mouseButton.x;
